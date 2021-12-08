@@ -23,9 +23,10 @@ This folder contains the C code and documentation to perform tubulin lattice sig
 Download the files in TestData to you linux workstation.
   
 Use the following command:
-  '''
+  
   mrc_2d_curve_weaken_dynamic_mask slot12_02441_F40_MC2_DW_shrink2.mrc MTD_mask_528_32.mrc slot12_02441_F40_MC2_DW_shrink2_MultiCurvesFit.txt 0 60 180
-  '''
+
+  
 3. Visulize the results:
   
 After running the program, when you open the original mrc file and the sub.mrc file, you should see something like this:

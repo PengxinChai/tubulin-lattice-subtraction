@@ -1,4 +1,4 @@
-# tubulin-lattice-subtraction
+# tubulin-lattice signal subtraction
 This folder contains the C code and documentation to perform tubulin lattice signal subtraction in cryo-EM images.
 
 1. The introduction of the program:

@@ -15,7 +15,10 @@ This folder contains the C code and documentation to perform tubulin lattice sig
   
   The width of the mask should be a litter bigger than the biggest width of filament in pixels. You also need to specify the search range(only provide left half).
   
-  The search range is important. The left_search_end should always smaller than the half width of the mask. Also, the value (half-width - left_search_end) should be slightly bigger than the smallest half-width of the filament (in pixels).
+  The search range is important. Here is the how you determine the search range:
+  ![Slide1](https://user-images.githubusercontent.com/83961552/145485344-33358d00-689f-46fa-af79-f5e532839575.jpeg)
+
+  If you filament has a constant width, then you can make the search range narrower. 
   
   Scale factor 0 means subtract all signals of repeating unit. 1 means no subtractoin. Usually set to 0. When testing the dynamic width result, can use negative values to visualize the mask width for each filament.
 

@@ -16,7 +16,7 @@ This folder contains the C code and documentation to perform tubulin lattice sig
   The width of the mask should be a litter bigger than the biggest width of filament in pixels. You also need to specify the search range(only provide left half).
   
   The search range is important. Here is the how you determine the search range:
-  ![Slide1](https://user-images.githubusercontent.com/83961552/145485344-33358d00-689f-46fa-af79-f5e532839575.jpeg)
+ ![Slide1_crop](https://user-images.githubusercontent.com/83961552/145485780-d30d3a9f-c48a-456e-b81d-e321bad72a4b.jpg)
 
   If you filament has a constant width, then you can make the search range narrower. 
   

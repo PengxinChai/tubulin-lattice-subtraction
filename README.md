@@ -37,7 +37,7 @@ The left is the original image, the right is the tubulin-lattice signal subtract
 
 a. Coordinate file: We are essentially doing 2D averaging of the repeating units of each filament. That's to say, we need to know the particles positions(X,Y),in-plane rotation angles(psi) and the helical tube ID(cluster). You can use my multi-curves fitting program to prepare these coordinate files. However, as long as you can prepare the four column txt file(X,Y,Angle,Cluster), the program should be running.
 
-b. Mask file: To perform the approatiate averaging and subtraction, we need a mask file whose lengh covers the repeating distance. The width of mask will be dynamically determined during the averaging. I prepared some common mask file for microtubule singlets and doublets with pixel size 1. You can scale the mask file depending on your image's pixel size. 
+b. Mask file: To perform the approatiate averaging and subtraction, we need a mask file whose lengh covers the repeating distance. The width of mask will be dynamically determined during the averaging. I prepared some common mask file for microtubule singlets and doublets with pixel size 1A. You can scale the mask file depending on your image's pixel size. 
   
 
   

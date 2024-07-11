@@ -8,7 +8,9 @@ git clone https://github.com/PengxinChai/tubulin-lattice-subtraction
 
 This manual is for MT singlet signal subtraction under cryoSPARC processing pipeline:
 
-Preprocessing Run cryoSPARC or cryoSPARC Live or Relion ro preprocess your data as usual Pick MT particles as many as possible (8nm cutoff using template matching) and run two-three iterative 2D classification jobs to filter out junk particles. Make sure the MT is properly picked. Use MT templates Picking parametes: diameter set to 320Å distance ratio set to 0.25 (picked 8nm particles) extraction particles box size 512, downsample to 128 (bin4) Select MT 2D classes
+Preprocessing
+
+Run cryoSPARC or cryoSPARC Live or Relion ro preprocess your data as usual Pick MT particles as many as possible (8nm cutoff using template matching) and run two-three iterative 2D classification jobs to filter out junk particles. Make sure the MT is properly picked. Use MT templates Picking parametes: diameter set to 320Å distance ratio set to 0.25 (picked 8nm particles) extraction particles box size 512, downsample to 128 (bin4) Select MT 2D classes
 
 Convert cryoSPARC file to RELION 3.0 Star format Navigate to the “2D classes selection job” in JXX and run the following command:
 

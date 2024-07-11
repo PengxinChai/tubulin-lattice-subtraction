@@ -1,3 +1,5 @@
+# multi-curve fitting and tubulin-lattice signal subtraction
+
 This manual is for MT singlet signal subtraction under cryoSPARC processing pipeline:
 
 Preprocessing Run cryoSPARC or cryoSPARC Live or Relion ro preprocess your data as usual Pick MT particles as many as possible (8nm cutoff using template matching) and run two-three iterative 2D classification jobs to filter out junk particles. Make sure the MT is properly picked. Use MT templates Picking parametes: diameter set to 320Å distance ratio set to 0.25 (picked 8nm particles) extraction particles box size 512, downsample to 128 (bin4) Select MT 2D classes
@@ -63,7 +65,6 @@ Link subtracted micrographs into motioncorrected micrographs: “cd motioncorrec
 
 
 ### OLD ###
-# tubulin-lattice signal subtraction
 This folder contains the C code and documentation to perform tubulin lattice signal subtraction in cryo-EM images.
 
 1. The introduction of the program:

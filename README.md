@@ -3,6 +3,9 @@ git clone https://github.com/PengxinChai/multi-curve-fitting
 
 git clone https://github.com/PengxinChai/tubulin-lattice-subtraction
 
+# contact: 
+pengxin.chai (at)yale.edu
+
 # multi-curve fitting and tubulin-lattice signal subtraction
 
 

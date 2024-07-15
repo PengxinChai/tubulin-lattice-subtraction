@@ -60,7 +60,9 @@ Prepare mask for MT signal subtraction Copy the mask into the folder:
 
 “cp common_masks/XXX.mrc .”
 
-Large scale MT signal subtraction Copy subtraction script into the folder:
+# MT signal subtraction 
+
+Copy subtraction script into the folder:
 
 “cp mrc_2d_curve_weaken_one.sh .”
 
@@ -68,9 +70,13 @@ Edit the script using Vim or gedit to change the files names
 
 Test the subtraction: “./mrc_2d_curve_weaken_one.sh XXX_doseweighted.mrc”
 
+Check the results using IMOD or relion_display
+
 Para run the subtraction: “para_run.py 32 ./mrc_2d_curve_weaken_one.sh XXX*_doseweighted.mrc”
 
-Move subtracted micrographs into “sub_mics” folder Navigate to the session folder move the subtracted micrographs into sub_mics: “mv ori_mics/*sub.mrc sub_mics”
+Move subtracted micrographs into “sub_mics” folder 
+
+Navigate to the session folder move the subtracted micrographs into sub_mics: “mv ori_mics/*sub.mrc sub_mics”
 
 Change the name of subtracted micrographs: “rename sub.mrc .mrc sub_mics/*sub.mrc”
 

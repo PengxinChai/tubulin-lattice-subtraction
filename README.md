@@ -8,18 +8,21 @@ pengxin.chai (at)yale.edu
 
 # multi-curve fitting and tubulin-lattice signal subtraction
 
-
 This manual is for MT singlet signal subtraction under cryoSPARC processing pipeline:
 
-Preprocessing
+# Preprocessing
 
-Run cryoSPARC or cryoSPARC Live or Relion ro preprocess your data as usual Pick MT particles as many as possible (8nm cutoff using template matching) and run two-three iterative 2D classification jobs to filter out junk particles. Make sure the MT is properly picked. Use MT templates Picking parametes: diameter set to 320Å distance ratio set to 0.25 (picked 8nm particles) extraction particles box size 512, downsample to 128 (bin4) Select MT 2D classes
+Run cryoSPARC or cryoSPARC Live or Relion to preprocess your data as usual. 
+
+Pick MT particles as many as possible (8nm cutoff using template matching) and run two-three iterative 2D classification jobs to filter out junk particles. Make sure the MT is properly picked. 
+
+Use MT templates Picking parametes: diameter set to 320Å distance ratio set to 0.25 (picked 8nm particles) extraction particles box size 512, downsample to 128 (bin4) Select MT 2D classes
 
 Convert cryoSPARC file to RELION 3.0 Star format Navigate to the “2D classes selection job” in JXX and run the following command:
 
 “csparc2star.py --swapxy particles_selected.cs JXX_passthrough_particles_selected.cs particles_selected.star”
 
-This will create the “particles_selected.star” which will be used for multi-curve fitting.
+This will create the “particles_selected.star” which will be used for multi-curve fitting. 
 
 Navigate to the cryosparc session folder, for example, in “/PX/SX”
 
@@ -31,7 +34,7 @@ Navigate into “ori_mics” folder: “cd ori_mics”
 
 Copy the “particles_selected.star” in this folder. “cp ../../JXX/particles_oriselected.star .”
 
-Recenter the “particles_selected.star”” file:
+Recenter the “particles_selected.star”” file using the script from "multi-curve fitting":
 
 “star_origin0_scale.com 4 particles_selected.star”
 
@@ -44,6 +47,8 @@ Split the “particles_selected_origin0.star” into into individual files using
 Perform multi-curve fitting In the motion-corrected folder, run the following command:
 
 “mcurve_fitting_2D.py -h” “mcurve_fitting_2D.py --pixel_size_ang 0.868 --poly_expon 2 XXX_split.star”
+
+Check the results using relion_display. Make sure the MT-segments are properly sampled. 
 
 Split each MT segment into smaller segments. It has been found that the subtraction is more clean when subtracting smaller segments for MT singlets. For MT doublet, this step is not necessary. It is because MT singlet is more heterogeneous(non-uniform diameter, helical twist) than MT doublet.
 

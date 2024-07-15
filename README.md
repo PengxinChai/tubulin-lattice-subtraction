@@ -10,7 +10,7 @@ pengxin.chai (at)yale.edu
 
 This manual is for MT singlet signal subtraction under cryoSPARC processing pipeline:
 
-# Preprocessing
+# Preprocessing and multi-curve fitting
 
 Run cryoSPARC or cryoSPARC Live or Relion to preprocess your data as usual. 
 

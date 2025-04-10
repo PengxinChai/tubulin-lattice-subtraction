@@ -40,6 +40,8 @@ git clone https://github.com/PengxinChai/tubulin-lattice-subtraction
 
 ## 🔁 Convert cryoSPARC to RELION `.star`
 
+Navigate to the “2D classes selection job” in JXX and run the following command:
+
 ```bash
 csparc2star.py --swapxy --relion2 particles_selected.cs JXX_passthrough_particles_selected.cs particles_selected.star
 ```
@@ -50,6 +52,11 @@ Ensure the output `.star` file **does NOT contain optics groups**.
 ---
 
 ## 📁 Organize Micrographs
+
+1. Navigate to the cryosparc session folder, for example, in “/PX/SX”. Or navigate to the motioncorrected job containing the micrographs.
+2. Make two folders called “ori_mics” and “sub_mics”
+3. Move the micrographs from motioncorrecded folder into “ori_mics”
+4. Copy the “particles_selected.star” in this folder
 
 ```bash
 mkdir ori_mics sub_mics
@@ -102,6 +109,8 @@ relion_display --pick   --i XXX_patch_aligned_doseweighted.mrc   --coords XXX_pa
 
 ## 🔍 Segment MTs into Small Pieces (Singlets Only)
 
+It has been found that the subtraction is cleaner when subtracting smaller segments for MT singlets (https://www.biorxiv.org/content/10.1101/2022.08.17.504273v1). For MT doublet, this step is not necessary. It is because MT singlet is more heterogeneous (non-uniform diameter, helical twist) than MT doublet.
+
 ```bash
 split_segments.py XXX_split_resam_Zscore.txt
 ```
@@ -113,6 +122,8 @@ Output: `split_resam_Zscore_renumber.txt`
 
 ## 🎭 Prepare MT Mask
 
+The mask needs to be rescaled to match the pixel size of the micrographs. For example, the following command rescaled the provided mask (1Å pixel size) to 0.8Å
+
 ```bash
 cp common_masks/XXX.mrc .
 relion_image_handler --i MT-250A_mask_angpix1A_box400X40.mrc   --o MT-250A_mask_angpix0.8A.mrc   --rescale_angpix 0.8
@@ -120,7 +131,9 @@ relion_image_handler --i MT-250A_mask_angpix1A_box400X40.mrc   --o MT-250A_mask_
 
 ---
 
-## 🧹 Subtract MT Signal (Large Scale)
+## 🧹 Subtract MT Signal (One image test)
+
+Edit the "mrc_2d_curve_weaken_one.sh" script using Vim or gedit to change the files names and program paths.
 
 ```bash
 cp mrc_2d_curve_weaken_one.sh .
@@ -130,7 +143,7 @@ chmod +x mrc_2d_curve_weaken_one.sh
 
 Check results using **IMOD** or **RELION**.
 
-### Parallel Subtraction (Python 2 Required)
+### Parallel Subtraction (Python 2 Required, large scale)
 
 ```bash
 python2 para_run.py 32 ./mrc_2d_curve_weaken_one.sh XXX*_doseweighted.mrc
@@ -150,7 +163,7 @@ ln -s ../sub_mics/*doseweighted.mrc .
 ln -s ../ori_mics/*doseweighted.mrc .
 ```
 
-⚠️ Linking original micrographs ensures cryoSPARC won’t fail due to missing MTs.
+⚠️ Linking original micrographs ensures cryoSPARC won’t fail due to missing MTs. Don’t worry about the warning messages during linking. 
 
 ---
 

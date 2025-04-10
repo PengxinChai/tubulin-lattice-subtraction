@@ -102,7 +102,7 @@ mcurve_fitting_2D.py --pixel_size_ang 0.868 --poly_expon 2 XXX_split.star
 Verify with:
 
 ```bash
-relion_display --pick   --i XXX_patch_aligned_doseweighted.mrc   --coords XXX_patch_aligned_doseweighted_split_resam_Zscore.star   --scale 0.3 --black 0 --white 0   --sigma_contrast 3 --particle_radius 46   --lowpass 20 --highpass 2000 --angpix 0.8
+relion_display --pick   --i XXX_patch_aligned_doseweighted.mrc   --coords XXX_patch_aligned_doseweighted_split_resam_Zscore.star   --scale 0.3 --black 0 --white 0   --sigma_contrast 3 --particle_radius 46   --lowpass 20 --highpass 2000 --angpix 0.8 --color_label rlnParticleSelectZScore --red 0 --blue 10
 ```
 
 ---

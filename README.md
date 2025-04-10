@@ -190,8 +190,6 @@ The provided C program can subtract tubulin lattice signals from cryo-EM images.
 - **`mrc_2d_curve_weaken_dynamic_mask`**: For processing microtubule doublets.
 - **`mrc_2d_curve_weaken`**: For processing microtubule singlets or filaments with similar diameters.
 
-The signal subtraction works by dynamically adjusting the width of the mask to match the repeating unit of the microtubule, allowing for more accurate removal of lattice signals.
-
 ## Usage
 
 In the `bin` directory, you will find the compiled C programs and a bash script to run the program.

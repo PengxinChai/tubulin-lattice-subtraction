@@ -9,10 +9,14 @@
 typedef struct _mrc_header *mrc_header;
 typedef struct _mrc *mrc;
 typedef struct _dimension dimension;
+typedef uint16_t float16_raw;  // Just storage
 
 mrc_header read_mrc_header(FILE *in);
 void print_mrc_header(mrc m);
-
+void write_float16(FILE *f, float16_raw value);
+float16_raw read_float16(FILE *f);
+float float16_to_float32(uint16_t h);
+uint16_t float32_to_float16(float f_val);
 mrc read_mrc(FILE *in);
 void free_mrc(mrc m);
 mrc_header get_mrc_header(mrc m);

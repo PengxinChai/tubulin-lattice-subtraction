@@ -129,6 +129,8 @@ cp common_masks/XXX.mrc .
 relion_image_handler --i MT-250A_mask_angpix1A_box400X40.mrc   --o MT-250A_mask_angpix0.8A.mrc   --rescale_angpix 0.8
 ```
 
+If you are working on a different filament and need to use a different mask, you can create the desired mask using the Jupyter notebook I provieded in the bin directory. 
+
 ---
 
 ## 🧹 Subtract MT Signal (One image test)
